@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MIA_CHEN_OS // AI Product Management Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#865c00",
+                        "on-surface-variant": "#c3caac",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#dde4e0",
+                        "on-tertiary-fixed": "#281900",
+                        "on-primary": "#273500",
+                        "primary-container": "#bef500",
+                        "surface-dim": "#0e1513",
+                        "inverse-on-surface": "#2b322f",
+                        "outline": "#8d9479",
+                        "background": "#0e1513",
+                        "primary-fixed": "#bef500",
+                        "surface-container-lowest": "#09100e",
+                        "on-secondary": "#11372b",
+                        "on-background": "#dde4e0",
+                        "on-tertiary": "#432c00",
+                        "secondary": "#a7cfbe",
+                        "primary-fixed-dim": "#a6d700",
+                        "on-primary-container": "#536d00",
+                        "secondary-fixed-dim": "#a7cfbe",
+                        "on-primary-fixed": "#151f00",
+                        "on-primary-fixed-variant": "#3a4d00",
+                        "on-secondary-container": "#96bead",
+                        "primary": "#ffffff",
+                        "tertiary-fixed": "#ffdeac",
+                        "surface-container-high": "#242b29",
+                        "surface-variant": "#2f3634",
+                        "error-container": "#93000a",
+                        "surface": "#0e1513",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffba38",
+                        "surface-tint": "#a6d700",
+                        "on-secondary-fixed-variant": "#294e41",
+                        "tertiary-container": "#ffdeac",
+                        "inverse-primary": "#4e6700",
+                        "surface-container": "#1a211f",
+                        "surface-container-highest": "#2f3634",
+                        "secondary-fixed": "#c3ebda",
+                        "on-secondary-fixed": "#002117",
+                        "inverse-surface": "#dde4e0",
+                        "tertiary": "#ffffff",
+                        "outline-variant": "#434933",
+                        "secondary-container": "#294e41",
+                        "surface-container-low": "#161d1b",
+                        "surface-bright": "#333b38"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "24px",
+                        "unit": "4px",
+                        "panel-padding": "20px",
+                        "gutter": "16px",
+                        "stack-gap": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-mono-sm": ["JetBrains Mono"],
+                        "headline-md": ["Geist"],
+                        "label-mono-xs": ["JetBrains Mono"],
+                        "headline-lg": ["Geist"],
+                        "headline-xl": ["Geist"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-mono-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-mono-xs": ["10px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e1513;
+            background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: relative;
+        }
+        .crt-overlay::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 100;
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+        }
+        .technical-border {
+            border: 1px solid oklch(0.25 0.02 155);
+        }
+        .scanline-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .scanline-underline::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            right: -4px;
+            bottom: 0;
+            height: 1px;
+            background: repeating-linear-gradient(to right, currentColor 0, currentColor 2px, transparent 2px, transparent 4px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container crt-overlay">
+<!-- TopNavBar -->
+<nav class="bg-background dark:bg-background text-on-surface dark:text-on-surface docked full-width top-0 z-50 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center w-full px-margin py-4 max-w-full">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary">
+            MC_OS // v1.0.4
+        </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-primary dark:text-primary border-l-2 border-primary dark:border-primary pl-2 lowercase font-label-mono-sm text-label-mono-sm scale-100 active:scale-[0.98] transition-transform" href="#index">index</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant lowercase font-label-mono-sm text-label-mono-sm hover:text-primary dark:hover:text-primary transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#matrix">matrix</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant lowercase font-label-mono-sm text-label-mono-sm hover:text-primary dark:hover:text-primary transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#logic">logic</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant lowercase font-label-mono-sm text-label-mono-sm hover:text-primary dark:hover:text-primary transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#logs">logs</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant lowercase font-label-mono-sm text-label-mono-sm hover:text-primary dark:hover:text-primary transition-colors duration-200 scale-100 active:scale-[0.98] transition-transform" href="#contact">contact</a>
+</div>
+<div class="flex items-center gap-stack-gap">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined text-primary" data-icon="sensors">sensors</span>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-margin pt-24 space-y-32">
+<!-- Section 1: Hero -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start" id="index">
+<div class="lg:col-span-7 space-y-stack-gap">
+<div class="flex items-center gap-unit text-primary-fixed-dim">
+<span class="material-symbols-outlined text-label-mono-xs" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span class="font-label-mono-xs text-label-mono-xs uppercase tracking-widest">System_Active // Port_01</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary leading-tight">HI, HERE IS MIA CHEN</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    I turn complex business workflows into AI product systems that connect knowledge, data, decisions, and action.
+                </p>
+<div class="flex flex-wrap gap-unit pt-gutter">
+<span class="technical-border px-unit py-1 font-label-mono-xs text-label-mono-xs text-on-surface">B2B AI Product</span>
+<span class="technical-border px-unit py-1 font-label-mono-xs text-label-mono-xs text-on-surface">LLM + RAG + Agent</span>
+<span class="technical-border px-unit py-1 font-label-mono-xs text-label-mono-xs text-on-surface">CRM / Sales Ops</span>
+<span class="technical-border px-unit py-1 font-label-mono-xs text-label-mono-xs text-on-surface">Evaluation Loop</span>
+<span class="technical-border px-unit py-1 font-label-mono-xs text-label-mono-xs text-on-surface">Vibe Coding</span>
+</div>
+</div>
+<div class="lg:col-span-5 technical-border bg-surface-container-low p-panel-padding relative overflow-hidden h-[400px]">
+<div class="flex justify-between items-center mb-gutter border-b border-outline-variant pb-unit">
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase">Module: Agent_Pipeline_Viz</span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">LOC: 42.09 / 12.04</span>
+</div>
+<div class="relative w-full h-full flex items-center justify-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="Abstract AI Pipeline" class="w-full h-full object-cover grayscale brightness-50" data-alt="An abstract visualization of an AI neural network and agent pipeline shown on a low-resolution CRT monitor. Glowing green nodes are connected by precise 90-degree vector lines. The scene is dark with heavy technical scanlines and digital artifacts, creating a high-fidelity engineering aesthetic in a dark green and black palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9ePVdtFxcyrlTSW42KO9Hgge6hhh0NtNxMkIn2pq7hJsyB_JWlJTCHN6HwoOyesMJi3v8Zf3wvq32YuzQhoAGrbhyND9t0NoiuIQvsnrI7iCvkxXTYaZvrhwmR9oUETc8ThOtqwDn0AJGq9_X2EArBr1nXUA4rV3lBcR6lJaym3G8GiBFwTdzUaGHuZ4Z9CEr1j_kZv7o4bswE-vuhmuJqh7ucooBUWEIkjOD2zzkm9H6OywadhdsJC3EV3kDApnll1VMjuofMXQo"/>
+</div>
+<!-- Blueprint Overlay -->
+<div class="relative z-10 w-full h-full border border-primary/10 flex flex-col items-center justify-center gap-stack-gap">
+<div class="w-32 h-32 border-2 border-primary-fixed-dim/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary-fixed-dim" data-icon="neurology">neurology</span>
+</div>
+<div class="flex gap-gutter">
+<div class="w-16 h-8 border border-outline-variant flex items-center justify-center font-label-mono-xs text-label-mono-xs">RAG_01</div>
+<div class="w-16 h-8 border border-outline-variant flex items-center justify-center font-label-mono-xs text-label-mono-xs">LLM_CORE</div>
+<div class="w-16 h-8 border border-outline-variant flex items-center justify-center font-label-mono-xs text-label-mono-xs">ACT_04</div>
+</div>
+<div class="w-full h-px bg-outline-variant relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-primary-fixed-dim rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: About / Capability Matrix -->
+<section class="space-y-gutter" id="matrix">
+<div class="flex items-end justify-between border-b border-outline-variant pb-unit">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase max-w-2xl">I design AI products that survive real business complexity.</h2>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant mb-unit">[SYS_CAPABILITIES_04]</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter pt-gutter">
+<!-- Module 01 -->
+<div class="technical-border p-panel-padding bg-surface-container-low space-y-stack-gap">
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-label-mono-sm text-primary-fixed-dim">01</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="account_tree">account_tree</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Business Decomposition</h3>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant leading-relaxed">
+                        Breaking down abstract business goals into discrete, automatable technical tasks and decision nodes.
+                    </p>
+</div>
+<!-- Module 02 -->
+<div class="technical-border p-panel-padding bg-surface-container-low space-y-stack-gap">
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-label-mono-sm text-primary-fixed-dim">02</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="smart_toy">smart_toy</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Agent Productization</h3>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant leading-relaxed">
+                        Wrapping core models into functional agents with defined tools, memory, and operational guardrails.
+                    </p>
+</div>
+<!-- Module 03 -->
+<div class="technical-border p-panel-padding bg-surface-container-low space-y-stack-gap">
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-label-mono-sm text-primary-fixed-dim">03</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="data_thresholding">data_thresholding</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Evaluation Loop</h3>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant leading-relaxed">
+                        Building rigorous ground-truth datasets to measure model performance and intent alignment at scale.
+                    </p>
+</div>
+<!-- Module 04 -->
+<div class="technical-border p-panel-padding bg-surface-container-low space-y-stack-gap">
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-label-mono-sm text-primary-fixed-dim">04</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="terminal">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary">Vibe Coding</h3>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant leading-relaxed">
+                        Rapid prototyping using AI-assisted engineering to find the "magic" in the user experience early.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Section 3: Work -->
+<section class="space-y-gutter" id="logic">
+<div class="flex items-center gap-unit text-primary-fixed-dim mb-stack-gap">
+<span class="material-symbols-outlined text-label-mono-xs" data-icon="list_alt">list_alt</span>
+<span class="font-label-mono-xs text-label-mono-xs uppercase tracking-widest">Case_Studies // Featured</span>
+</div>
+<!-- Featured Project -->
+<div class="technical-border bg-surface-container-low overflow-hidden">
+<div class="bg-surface-container px-panel-padding py-2 border-b border-outline-variant flex justify-between items-center">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase">Project: Intelligent Sales Ops</span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">YEAR: 2024</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<div class="lg:col-span-8 p-panel-padding space-y-gutter">
+<h3 class="font-headline-lg text-headline-lg text-primary">Intelligent Sales Operations CRM: Sales Assistant Agent + Sales Report Agent</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter pt-stack-gap">
+<div class="space-y-unit">
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase">Metric_01</span>
+<p class="font-headline-md text-headline-md text-primary-fixed-dim">70%+</p>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface">Self-service resolution</p>
+</div>
+<div class="space-y-unit">
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase">Metric_02</span>
+<p class="font-headline-md text-headline-md text-primary-fixed-dim">90%</p>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface">Intent recognition</p>
+</div>
+<div class="space-y-unit">
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase">Metric_03</span>
+<p class="font-headline-md text-headline-md text-primary-fixed-dim">92%</p>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface">Retrieval accuracy</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter pt-gutter border-t border-outline-variant">
+<div class="space-y-unit">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase">[CONTEXT]</span>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">Global sales teams struggling with data entry and manual reporting across legacy systems.</p>
+</div>
+<div class="space-y-unit">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase">[STRATEGY]</span>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">Implement a dual-agent system with localized memory and high-precision RAG over internal docs.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 bg-surface-container-high p-panel-padding border-l border-outline-variant space-y-gutter">
+<div class="space-y-unit">
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase">[ARCHITECTURE]</span>
+<div class="pt-stack-gap space-y-stack-gap">
+<div class="technical-border p-unit font-label-mono-xs text-label-mono-xs text-on-surface flex items-center gap-unit">
+<span class="w-1.5 h-1.5 bg-primary-fixed-dim"></span> Orchestration: LangGraph
+                                </div>
+<div class="technical-border p-unit font-label-mono-xs text-label-mono-xs text-on-surface flex items-center gap-unit">
+<span class="w-1.5 h-1.5 bg-primary-fixed-dim"></span> Vector: Pinecone / Hybrid
+                                </div>
+<div class="technical-border p-unit font-label-mono-xs text-label-mono-xs text-on-surface flex items-center gap-unit">
+<span class="w-1.5 h-1.5 bg-primary-fixed-dim"></span> LLM: GPT-4o + Claude 3.5
+                                </div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-2 font-label-mono-sm text-label-mono-sm uppercase font-bold hover:bg-transparent hover:border hover:border-primary-container hover:text-primary-container transition-all active:scale-95">
+                            Read Full Report // 04
+                        </button>
+</div>
+</div>
+</div>
+<!-- Secondary Project -->
+<div class="technical-border bg-surface-container-low p-panel-padding">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-gutter">
+<div class="flex items-center gap-gutter">
+<span class="font-label-mono-xs text-label-mono-xs text-primary-fixed-dim">2023 // 2024</span>
+<h4 class="font-headline-md text-headline-md text-primary">Insurance Enterprise CRM System</h4>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">PHASE: STABLE_DEPLOYMENT</span>
+</div>
+<div class="mt-gutter flex flex-col md:flex-row gap-gutter text-on-surface-variant font-label-mono-xs">
+<div class="flex-1 border-l border-outline-variant pl-gutter py-unit">
+                        Built a custom internal tool for claims processing utilizing a private RAG pipeline to ensure data privacy.
+                    </div>
+<div class="flex-1 border-l border-outline-variant pl-gutter py-unit">
+                        Reduced claims processing time by 45% through automated document categorization and metadata extraction.
+                    </div>
+</div>
+</div>
+</section>
+<!-- Section 4: System Log -->
+<section class="space-y-gutter" id="logs">
+<div class="flex items-end justify-between border-b border-outline-variant pb-unit">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase">My operating system for AI products.</h2>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant mb-unit">[SYS_PROTOCOL_EXECUTED]</span>
+</div>
+<div class="space-y-unit">
+<!-- Log 1 -->
+<div class="flex gap-gutter items-start border-b border-outline-variant/30 py-gutter group hover:bg-surface-container transition-colors">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant w-24 shrink-0">[METHOD_01]</span>
+<div class="flex-grow space-y-unit">
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-primary-fixed-dim">Find AI scenarios</h4>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant max-w-2xl">Scanning workflows for areas with high friction but sufficient structured context where LLMs can generate high-confidence outputs.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100" data-icon="search">search</span>
+</div>
+<!-- Log 2 -->
+<div class="flex gap-gutter items-start border-b border-outline-variant/30 py-gutter group hover:bg-surface-container transition-colors">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant w-24 shrink-0">[METHOD_02]</span>
+<div class="flex-grow space-y-unit">
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-primary-fixed-dim">Move to task closure</h4>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant max-w-2xl">Ensuring the system doesn't just "chat" but actually completes a business-valued action through tool calling and state management.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100" data-icon="done_all">done_all</span>
+</div>
+<!-- Log 3 -->
+<div class="flex gap-gutter items-start border-b border-outline-variant/30 py-gutter group hover:bg-surface-container transition-colors">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant w-24 shrink-0">[METHOD_03]</span>
+<div class="flex-grow space-y-unit">
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-primary-fixed-dim">Build layered data foundations</h4>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant max-w-2xl">Curating knowledge bases that are cleaned, chunked, and indexed specifically for retrieval performance, not just dumping data.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100" data-icon="layers">layers</span>
+</div>
+<!-- Log 4 -->
+<div class="flex gap-gutter items-start border-b border-outline-variant/30 py-gutter group hover:bg-surface-container transition-colors">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant w-24 shrink-0">[METHOD_04]</span>
+<div class="flex-grow space-y-unit">
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-primary-fixed-dim">Iterate through evaluation</h4>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant max-w-2xl">Using LLM-as-a-judge and manual red-teaming to transform qualitative "vibes" into quantitative benchmarks.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100" data-icon="analytics">analytics</span>
+</div>
+<!-- Log 5 -->
+<div class="flex gap-gutter items-start border-b border-outline-variant/30 py-gutter group hover:bg-surface-container transition-colors">
+<span class="font-label-mono-sm text-label-mono-sm text-on-surface-variant w-24 shrink-0">[METHOD_05]</span>
+<div class="flex-grow space-y-unit">
+<h4 class="font-headline-md text-headline-md text-primary group-hover:text-primary-fixed-dim">Prototype fast</h4>
+<p class="font-label-mono-xs text-label-mono-xs text-on-surface-variant max-w-2xl">Leveraging Replit, Cursor, and Vercel to ship MVP agents in days, validating core loops before building full production infrastructure.</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100" data-icon="bolt">bolt</span>
+</div>
+</div>
+</section>
+<!-- Section 5: Contact / Final Terminal -->
+<section class="pb-24" id="contact">
+<div class="technical-border bg-surface-container-low overflow-hidden">
+<div class="bg-surface-container-highest px-panel-padding py-2 flex items-center justify-between">
+<div class="flex items-center gap-stack-gap">
+<span class="w-2.5 h-2.5 bg-[#ff5f56] rounded-full"></span>
+<span class="w-2.5 h-2.5 bg-[#ffbd2e] rounded-full"></span>
+<span class="w-2.5 h-2.5 bg-[#27c93f] rounded-full"></span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">miachen_final_output.sh</span>
+</div>
+<div class="p-panel-padding space-y-gutter">
+<div class="space-y-unit">
+<p class="font-label-mono-sm text-label-mono-sm text-primary-fixed-dim">&gt; MIAC_OS.init()</p>
+<p class="font-label-mono-sm text-label-mono-sm text-on-surface-variant">System ready. Establishing communication channel...</p>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase">Let us build something useful with AI.</h2>
+<div class="flex flex-col md:flex-row gap-gutter pt-gutter border-t border-outline-variant">
+<a class="scanline-underline font-label-mono-sm text-label-mono-sm text-primary hover:text-primary-fixed-dim transition-colors" href="mailto:mia@miachen.ai">EMAIL: mia@miachen.ai</a>
+<a class="scanline-underline font-label-mono-sm text-label-mono-sm text-primary hover:text-primary-fixed-dim transition-colors" href="#">WECHAT: MIA_CORE_01</a>
+<a class="scanline-underline font-label-mono-sm text-label-mono-sm text-primary hover:text-primary-fixed-dim transition-colors" href="#">GITHUB: @mia-chen-systems</a>
+</div>
+<div class="pt-24 flex justify-end">
+<span class="font-label-mono-xs text-label-mono-xs text-outline-variant uppercase">E_O_F</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low text-on-surface-variant dark:text-on-surface-variant w-full border-t border-outline-variant dark:border-outline-variant flex flex-col md:flex-row justify-between items-center px-margin py-8 gap-stack-gap">
+<div class="font-label-mono-sm text-primary dark:text-primary">MC_OS // PERSONAL_ARCHIVE</div>
+<div class="font-label-mono-xs text-label-mono-xs uppercase text-center md:text-left">
+            © 2024 MIA_CHEN_OS // SYSTEM_CORE_EXECUTED // LOC: 34.05 / 118.24
+        </div>
+<div class="flex gap-gutter">
+<a class="font-label-mono-xs text-label-mono-xs uppercase hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-variant dark:hover:bg-surface-variant transition-all duration-300 px-unit py-0.5" href="#">source_code</a>
+<a class="font-label-mono-xs text-label-mono-xs uppercase hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-variant dark:hover:bg-surface-variant transition-all duration-300 px-unit py-0.5" href="#">sys_protocol</a>
+<a class="font-label-mono-xs text-label-mono-xs uppercase hover:text-on-surface dark:hover:text-on-surface hover:bg-surface-variant dark:hover:bg-surface-variant transition-all duration-300 px-unit py-0.5" href="#">signal</a>
+</div>
+</footer>
+</body></html>

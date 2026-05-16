@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RIA_OS // AI_PM_PORTFOLIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#865c00",
+                    "on-surface-variant": "#c3caac",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#dde4e0",
+                    "on-tertiary-fixed": "#281900",
+                    "on-primary": "#273500",
+                    "primary-container": "#bef500",
+                    "surface-dim": "#0e1513",
+                    "inverse-on-surface": "#2b322f",
+                    "outline": "#8d9479",
+                    "background": "#0e1513",
+                    "primary-fixed": "#bef500",
+                    "surface-container-lowest": "#09100e",
+                    "on-secondary": "#11372b",
+                    "on-background": "#dde4e0",
+                    "on-tertiary": "#432c00",
+                    "secondary": "#a7cfbe",
+                    "primary-fixed-dim": "#a6d700",
+                    "on-primary-container": "#536d00",
+                    "secondary-fixed-dim": "#a7cfbe",
+                    "on-primary-fixed": "#151f00",
+                    "on-primary-fixed-variant": "#3a4d00",
+                    "on-secondary-container": "#96bead",
+                    "primary": "#ffffff",
+                    "tertiary-fixed": "#ffdeac",
+                    "surface-container-high": "#242b29",
+                    "surface-variant": "#2f3634",
+                    "error-container": "#93000a",
+                    "surface": "#0e1513",
+                    "on-tertiary-fixed-variant": "#604100",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#ffba38",
+                    "surface-tint": "#a6d700",
+                    "on-secondary-fixed-variant": "#294e41",
+                    "tertiary-container": "#ffdeac",
+                    "inverse-primary": "#4e6700",
+                    "surface-container": "#1a211f",
+                    "surface-container-highest": "#2f3634",
+                    "secondary-fixed": "#c3ebda",
+                    "on-secondary-fixed": "#002117",
+                    "inverse-surface": "#dde4e0",
+                    "tertiary": "#ffffff",
+                    "outline-variant": "#434933",
+                    "secondary-container": "#294e41",
+                    "surface-container-low": "#161d1b",
+                    "surface-bright": "#333b38"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "24px",
+                    "unit": "4px",
+                    "panel-padding": "20px",
+                    "gutter": "16px",
+                    "stack-gap": "12px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-mono-sm": ["JetBrains Mono"],
+                    "headline-md": ["Geist"],
+                    "label-mono-xs": ["JetBrains Mono"],
+                    "headline-lg": ["Geist"],
+                    "headline-xl": ["Geist"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-mono-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-mono-xs": ["10px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* CRT Scan-line Overlay */
+        .crt-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .border-technical {
+            border: 1px solid oklch(0.25 0.02 155);
+        }
+
+        .dot-matrix {
+            background-image: radial-gradient(circle, oklch(0.25 0.02 155) 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<div class="crt-overlay"></div>
+<!-- TopNavBar -->
+<header class="bg-background text-on-surface font-headline-md text-headline-md border-b border-outline-variant docked full-width top-0 z-50 flex justify-between items-center w-full px-margin py-4 max-w-full sticky">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">RIA_OS // v1.0.4</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary scale-100 active:scale-[0.98] transition-transform">terminal</span>
+<span class="material-symbols-outlined text-primary scale-100 active:scale-[0.98] transition-transform">menu</span>
+</div>
+</header>
+<main class="w-full flex flex-col gap-unit">
+<!-- Hero Section -->
+<section class="px-margin pt-10 pb-16 flex flex-col gap-8 border-b border-outline-variant">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="h-2 w-2 bg-primary rounded-full animate-pulse"></span>
+<span class="font-label-mono-sm text-label-mono-sm text-primary uppercase">System_Active: Ria_PM_Core</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl tracking-tight leading-none text-primary">Architecting Intelligence.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Technical Product Manager specialized in agentic workflows, LLM orchestration, and scalable AI infrastructure.
+                </p>
+</div>
+<!-- Simplified Agent Pipeline Visual -->
+<div class="border-technical bg-surface-container-low p-4 relative overflow-hidden">
+<div class="absolute top-2 right-2 font-label-mono-xs text-label-mono-xs text-outline opacity-50">LOC: 34.05 / 118.24</div>
+<div class="flex flex-col gap-6 relative z-10">
+<div class="flex items-center justify-between">
+<div class="px-3 py-1 border border-primary text-primary font-label-mono-sm">INPUT_STREAM</div>
+<div class="flex-grow border-t border-dashed border-outline mx-2"></div>
+<span class="material-symbols-outlined text-primary">sensors</span>
+</div>
+<div class="w-full border-technical p-4 bg-surface-container flex flex-col gap-2">
+<div class="font-label-mono-xs text-on-surface-variant uppercase">Model_Orchestrator</div>
+<div class="h-1 w-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<div class="flex justify-between font-label-mono-xs">
+<span>TOKEN_DENSITY: HIGH</span>
+<span>LATENCY: 42ms</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary">memory</span>
+<div class="flex-grow border-t border-dashed border-outline mx-2"></div>
+<div class="px-3 py-1 border border-primary text-primary font-label-mono-sm">ACTION_OUTPUT</div>
+</div>
+</div>
+<div class="absolute inset-0 dot-matrix opacity-10 pointer-events-none"></div>
+</div>
+</section>
+<!-- Capability Matrix (Vertical Modules) -->
+<section class="px-margin py-12 flex flex-col gap-stack-gap">
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-headline-md text-headline-md text-primary">Capability_Matrix</h2>
+<span class="font-label-mono-xs text-label-mono-xs text-outline">[SECTION_START]</span>
+</div>
+<!-- Module 01 -->
+<div class="border-technical p-panel-padding bg-surface-container-lowest flex flex-col gap-4 relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-primary">01 // Agentic Workflows</span>
+<span class="material-symbols-outlined text-on-surface-variant">schema</span>
+</div>
+<p class="font-body-md text-on-surface-variant">
+                    Designing autonomous agents that decompose complex tasks into executable sub-goals with self-correction loops.
+                </p>
+<div class="flex gap-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label-mono-xs text-on-surface-variant">AUTOGEN</span>
+<span class="border border-outline-variant px-2 py-0.5 font-label-mono-xs text-on-surface-variant">LANGGRAPH</span>
+</div>
+</div>
+<!-- Module 02 -->
+<div class="border-technical p-panel-padding bg-surface-container-lowest flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-on-surface-variant">02 // RAG Optimization</span>
+<span class="material-symbols-outlined text-on-surface-variant">database</span>
+</div>
+<p class="font-body-md text-on-surface-variant">
+                    Enterprise-grade vector retrieval strategies, hybrid search, and context-window management for high-precision responses.
+                </p>
+<div class="flex gap-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label-mono-xs text-on-surface-variant">PINECONE</span>
+<span class="border border-outline-variant px-2 py-0.5 font-label-mono-xs text-on-surface-variant">SEMANTIC_KERNEL</span>
+</div>
+</div>
+<!-- Module 03 -->
+<div class="border-technical p-panel-padding bg-surface-container-lowest flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="font-label-mono-sm text-on-surface-variant">03 // System Evaluation</span>
+<span class="material-symbols-outlined text-on-surface-variant">analytics</span>
+</div>
+<p class="font-body-md text-on-surface-variant">
+                    Implementing robust LLM-as-a-judge frameworks and automated evaluation pipelines for production stability.
+                </p>
+<div class="flex gap-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label-mono-xs text-on-surface-variant">W&amp;B</span>
+<span class="border border-outline-variant px-2 py-0.5 font-label-mono-xs text-on-surface-variant">PROMPT_ENG</span>
+</div>
+</div>
+<div class="w-full border-t border-dashed border-outline-variant mt-4 pt-2 text-center">
+<span class="font-label-mono-xs text-outline">[SECTION_END]</span>
+</div>
+</section>
+<!-- Technical Metrics Grid -->
+<section class="bg-surface-container-low px-margin py-12 border-y border-outline-variant">
+<div class="flex flex-col gap-6">
+<h2 class="font-label-mono-sm text-primary uppercase tracking-widest text-center">Performance_Benchmarks</h2>
+<div class="grid grid-cols-2 gap-unit">
+<div class="border-technical p-4 flex flex-col gap-1 bg-background">
+<div class="font-label-mono-xs text-outline uppercase">Uptime</div>
+<div class="font-headline-md text-primary">99.98%</div>
+</div>
+<div class="border-technical p-4 flex flex-col gap-1 bg-background">
+<div class="font-label-mono-xs text-outline uppercase">Model_Acc</div>
+<div class="font-headline-md text-primary">94.2%</div>
+</div>
+<div class="border-technical p-4 flex flex-col gap-1 bg-background">
+<div class="font-label-mono-xs text-outline uppercase">Cost_Redux</div>
+<div class="font-headline-md text-primary">-40%</div>
+</div>
+<div class="border-technical p-4 flex flex-col gap-1 bg-background">
+<div class="font-label-mono-xs text-outline uppercase">Deployments</div>
+<div class="font-headline-md text-primary">124</div>
+</div>
+</div>
+<div class="border-technical p-4 flex justify-between items-center bg-background">
+<div class="flex flex-col">
+<div class="font-label-mono-xs text-outline uppercase">Current_Context_Size</div>
+<div class="font-label-mono-sm text-primary">128k Tokens</div>
+</div>
+<div class="flex gap-1">
+<div class="w-1 h-4 bg-primary"></div>
+<div class="w-1 h-4 bg-primary"></div>
+<div class="w-1 h-4 bg-primary"></div>
+<div class="w-1 h-4 bg-primary opacity-30"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Visualization (Featured) -->
+<section class="px-margin py-12 flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md text-primary">Project_Highlight: Nexus_Kernel</h2>
+<div class="h-px w-full bg-outline-variant"></div>
+</div>
+<div class="relative w-full aspect-square border-technical overflow-hidden bg-surface-container">
+<img alt="Nexus Kernel Visual" class="w-full h-full object-cover grayscale opacity-80 mix-blend-screen" data-alt="A high-tech digital architectural diagram of a complex neural network system, rendered in a dark-mode technical blueprint style. The image features glowing white lines, cyan connection nodes, and monospaced data labels against a deep charcoal-green background. Thin CRT scan-lines are visible across the entire frame, creating a retro-futuristic engineering aesthetic. The lighting is low-key, emphasizing the intricate web of intelligence pathways." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMV5CfC8Jm4gFASIMKap0agDC0fcsJ8q0-hlL262Qota9Ic_lwI62vn7eKqi4BngEAWA2NpDy13zBlC2kmHRU8g0UCfaQOaybYyBi91DBS4dOZTk6hiEStzFx8IFcHEnGrxI2kluRCOnG0jUJSmjim75-_jsk5HcGMmVPCD9PgR1MV1Bf42n6Hr9jJgA2ahoJSTRPdiFqd6dN9S8_KCrwNeqCdHRae-EW5WoSdwJAneybT-SXv8AeTFYSUrlSs7uLDLI-n8Pf0jC30"/>
+<div class="absolute bottom-4 left-4 right-4 bg-background/90 border-technical p-4 backdrop-blur-sm">
+<div class="font-label-mono-xs text-primary mb-1">PROTO_v.09</div>
+<div class="font-body-md text-on-surface">Integrated 12 autonomous sub-agents into a single unified kernel for real-time market synthesis.</div>
+</div>
+</div>
+<button class="w-full bg-primary text-background font-label-mono-sm py-4 uppercase font-bold hover:bg-transparent hover:text-primary hover:border-primary border border-transparent transition-all active:scale-[0.98]">
+                Execute_Contact_Sequence
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low text-on-surface-variant font-label-mono-xs text-label-mono-xs uppercase w-full border-t border-outline-variant transition-all duration-300 flex flex-col md:flex-row justify-between items-center px-margin py-8 gap-stack-gap">
+<div class="font-label-mono-sm text-primary">RIA_OS // SYS_CORE</div>
+<div class="text-center md:text-left">© 2024 RIA_OS // SYSTEM_CORE_EXECUTED // LOC: 34.05 / 118.24</div>
+<div class="flex gap-4">
+<a class="hover:text-on-surface hover:bg-surface-variant transition-colors" href="#">source_code</a>
+<a class="hover:text-on-surface hover:bg-surface-variant transition-colors" href="#">sys_protocol</a>
+<a class="hover:text-on-surface hover:bg-surface-variant transition-colors" href="#">signal</a>
+</div>
+</footer>
+</body></html>
