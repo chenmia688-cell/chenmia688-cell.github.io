@@ -25,10 +25,9 @@ export function Header({ activeId }: Props) {
       <header className="header">
         <a className="header__brand" href="#home">
           <span className="header__mark">{site.brand}</span>
-          <span className="header__name">{site.brandVersion}</span>
         </a>
 
-        <nav className="nav" aria-label="Primary">
+        <nav className="nav" aria-label="主导航">
           {navItems.map((item) => (
             <a
               key={item.id}
@@ -52,7 +51,7 @@ export function Header({ activeId }: Props) {
             onClick={() => setOpen(true)}
           >
             <span id={labelId} className="sr-only">
-              Open menu
+              打开菜单
             </span>
             <Icon name="menu" />
           </button>
@@ -69,7 +68,7 @@ export function Header({ activeId }: Props) {
         <div className="drawer__panel">
           <div className="section__tag">
             <Icon name="menu" />
-            Menu
+            菜单
           </div>
           <div className="drawer__links">
             {navItems.map((item) => (
@@ -80,12 +79,14 @@ export function Header({ activeId }: Props) {
                 onClick={() => setOpen(false)}
               >
                 {item.label}
-                <span className="muted"> · {item.labelZh}</span>
+                {item.labelZh && item.labelZh !== item.label ? (
+                  <span className="muted"> · {item.labelZh}</span>
+                ) : null}
               </a>
             ))}
           </div>
           <button type="button" className="drawer__close" onClick={() => setOpen(false)}>
-            <Icon name="close" /> Close
+            <Icon name="close" /> 关闭
           </button>
         </div>
       </div>

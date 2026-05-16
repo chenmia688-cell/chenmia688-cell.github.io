@@ -6,7 +6,7 @@ export function BootScreen({ phase }: Props) {
   return (
     <div className={`boot${phase === 'exit' ? ' boot--hide' : ''}`} aria-live="polite">
       <div>
-        <div>Mia Chen · Blush Product Lab</div>
+        <div>Mia Chen · AI 产品作品集</div>
         <div className="boot__line" />
       </div>
     </div>

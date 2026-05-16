@@ -8,7 +8,6 @@ import { useActiveSection, useBootPhase, usePrefersReducedMotion } from '@/hooks
 import { AboutSection } from '@/sections/AboutSection'
 import { ContactSection } from '@/sections/ContactSection'
 import { HeroSection } from '@/sections/HeroSection'
-import { SystemSection } from '@/sections/SystemSection'
 import { WorkSection } from '@/sections/WorkSection'
 
 export default function App() {
@@ -25,7 +24,6 @@ export default function App() {
           <HeroSection />
           <AboutSection />
           <WorkSection />
-          <SystemSection />
           <ContactSection />
         </main>
         <Footer />

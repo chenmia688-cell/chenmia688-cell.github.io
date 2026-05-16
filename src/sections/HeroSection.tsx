@@ -7,10 +7,12 @@ export function HeroSection() {
     <section className="section hero" id="home">
       <Reveal>
         <div>
-          <div className="section__tag">
-            <Icon name="pulse" />
-            {site.hero.status}
-          </div>
+          {site.hero.status ? (
+            <div className="section__tag">
+              <Icon name="pulse" />
+              {site.hero.status}
+            </div>
+          ) : null}
           <p className="section__tag" style={{ marginTop: 8, color: 'var(--muted)' }}>
             {site.hero.roleLine}
           </p>
