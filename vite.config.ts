@@ -6,8 +6,8 @@ import { defineConfig } from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-/** GitHub Pages: https://chenmia688-cell.github.io/Miahello.github.io/ */
-const pagesBase = '/Miahello.github.io/'
+/** GitHub project Pages: https://<user>.github.io/<repo>/ — use relative base so asset URLs match any repo casing. */
+const pagesBase = './'
 
 export default defineConfig(({ command }) => ({
   base: command === 'build' ? pagesBase : '/',
